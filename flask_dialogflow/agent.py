@@ -598,7 +598,7 @@ class DialogflowAgent:
         webhook_response = self._handle_request(webhook_request)
         response_body = webhook_response.to_json()
         self._log_json(response_body)
-        return jsonify(response_body)
+        return json.dumps(response_body)
 
     def _lookup_conversation_handler(
         self, conv: DialogflowConversation
